@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>table, th, td {
+        
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    
+  }
+  th{
+      background-color: aqua;
+  }
+  table{width: 100%;}
+  </style>
+  <h3 style="align-items: center;">
+      Details of Each Individual blogs
+  </h3></style>
+<table>
+    <thead>
+        <tr><th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th></tr>
+    </thead>
+    <tbody><tr>
+        <td>{{blogs.id}}</td>
+        <td>{{blogs.title}}</td>
+        
+        <td>{{blogs.content}}</td>
+        <td>{{blogs.author}}</td>
+       </tr></tbody>
+</table>
+{%endblock%}

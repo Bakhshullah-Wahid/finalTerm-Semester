@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div{
+            background-color: blanchedalmond;
+        }
+    </style>
+    <div><h1 style="color: blue; text-align: center;">Blog handling site</h1>
+        Home Search
+        <a href="{%url 'authenticate'%}">sign up</a>
+        <a href="{%url 'login'%}">login</a>
+    </div>
+    {%block content%}
+    {%endblock%}
+</body>
+</html>

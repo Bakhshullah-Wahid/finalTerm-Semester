@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{%block content%}
+{%if blogs%}
+<br>
+<style>
+    table, th, td {
+        
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      
+    }
+    th{
+        background-color: aqua;
+    }
+    table{width: 100%;}
+    </style>
+    <h3 style="align-items: center;">
+        Details of Blogs
+    </h3>
+    
+<a href="{%url 'formBlogPost'%}"><button>Create Blog</button></a>
+<table>
+    <thead>
+        <tr>
+           
+            <th>Title</th>
+            <th>Publication Data</th>
+            <th>Author</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    {%for publishedBlog in blogs%}
+    <tbody>
+        <tr>
+
+            <td><a href="{%url 'publishedBlogDetail' publishedBlog.id%}">{{publishedBlog.title}}</a></td>
+            <td>{{publishedBlog.publication_date}}</td>
+            <td><a href="{%url 'authorAllBlog' publishedBlog.author%}">{{publishedBlog.author}}</a></td>
+            <td><a href="{%url 'delete' publishedBlog.id%}">Delete</a></td>
+            <td><a href="{%url 'update' publishedBlog.id%}">Update</a></td>
+        </tr>
+    </tbody>
+    {%endfor%}
+</table>
+{%endif%}
+
+{%endblock%}

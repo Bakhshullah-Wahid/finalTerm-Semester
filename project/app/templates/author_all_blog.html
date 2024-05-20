@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block content%}
+<br>
+<style>
+    table, th, td {
+        
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      
+    }
+    th{
+        background-color: aqua;
+    }
+    table{width: 100%;}
+    </style>
+    <h3 style="align-items: center;">
+        Details of Author all Blogs
+    </h3>
+    
+<table>
+    <thead>
+        <tr>
+           
+            <th>Title</th>
+            <th>Publication Data</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    {%for publishedBlog in allBlogs%}
+    <tbody>
+        <tr>
+
+            <td>{{publishedBlog.title}}</td>
+            <td>{{publishedBlog.publication_date}}</td>
+            <td>{{publishedBlog.author}}</td>
+        </tr>
+    </tbody>
+    {%endfor%}
+</table>
+
+{%endblock%}
